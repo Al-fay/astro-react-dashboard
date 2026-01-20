@@ -1,0 +1,10 @@
+---
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
+---
+
+<div class="flex min-h-screen bg-background text-foreground">
+  <AppSidebar client:load />
+  <main class="flex-1 p-6">
+    <slot />
+  </main>
+</div>
