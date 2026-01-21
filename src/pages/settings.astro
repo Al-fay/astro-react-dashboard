@@ -1,8 +1,9 @@
 ---
 import DashboardLayout from "@/components/layouts/DashboardLayout.astro";
 import SettingsPage from "@/components/pages/SettingsPage";
+const pageTitle = "Settings";
 ---
 
-<DashboardLayout pageTitle="Settings">
+<DashboardLayout pageTitle={pageTitle}>
   <SettingsPage client:load />
 </DashboardLayout>

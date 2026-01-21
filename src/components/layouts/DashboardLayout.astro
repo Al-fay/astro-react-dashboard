@@ -1,14 +1,12 @@
 ---
-import AppSidebar from "@/components/sidebar/app-sidebar";
 import BaseLayout from "./BaseLayout.astro";
-
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
 const { pageTitle } = Astro.props;
-const { pathname } = Astro.url;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="flex min-h-screen bg-background text-foreground">
-    <AppSidebar currentPath={pathname} client:load />
+    <AppSidebar client:load />
     <main class="flex-1 p-6">
       <slot />
     </main>

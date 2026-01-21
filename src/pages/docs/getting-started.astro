@@ -1,8 +1,10 @@
 ---
 import DashboardLayout from "@/components/layouts/DashboardLayout.astro";
 import GettingStartedPage from "@/components/pages/GettingStartedPage";
+
+const pageTitle = "Getting Started";
 ---
 
-<DashboardLayout pageTitle="Getting Started">
+<DashboardLayout pageTitle={pageTitle}>
   <GettingStartedPage client:load />
 </DashboardLayout>

@@ -16,7 +16,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -34,8 +34,12 @@ export default function LoginPage() {
       console.log("Login sukses:", data);
 
       window.location.href = "/dashboard";
-    } catch (error) {
-      setError(error.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Terjadi kesalahan tidak diketahui");
+      }
     } finally {
       setLoading(false);
     }
