@@ -1,0 +1,9 @@
+---
+import AuthLayout from "@/components/layouts/AuthLayout.astro";
+import LoginPage from "@/components/auth/login-page";
+const pageTitle = "Login";
+---
+
+<AuthLayout pageTitle={pageTitle}>
+  <LoginPage client:load />
+</AuthLayout>

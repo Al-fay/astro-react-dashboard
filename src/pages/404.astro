@@ -1,3 +1,41 @@
 ---
+import ErrorLayout from "@/components/layouts/ErrorLayout.astro";
 
+const pageTitle = Astro.props;
 ---
+
+<ErrorLayout pageTitle={pageTitle}>
+  <div
+    class="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 to-slate-800 text-white"
+  >
+    <div class="text-center px-4">
+      <h1
+        class="text-[10rem] font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400"
+      >
+        404
+      </h1>
+
+      <h2 class="mt-2 text-3xl font-semibold">Page Not Found</h2>
+
+      <p class="mt-3 text-slate-300 max-w-md mx-auto">
+        Maaf, halaman yang Anda cari tidak tersedia atau mungkin telah
+        dipindahkan.
+      </p>
+
+      <div class="mt-8 flex justify-center gap-4">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition font-medium"
+        >
+          Kembali ke Beranda
+        </a>
+        <button
+          onclick="history.back()"
+          class="px-6 py-3 rounded-lg border border-slate-500 hover:bg-slate-700 transition font-medium"
+        >
+          Halaman Sebelumnya
+        </button>
+      </div>
+    </div>
+  </div>
+</ErrorLayout>

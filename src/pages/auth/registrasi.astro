@@ -1,0 +1,9 @@
+---
+import AuthLayout from "@/components/layouts/AuthLayout.astro";
+import RegistrasiPage from "@/components/auth/registrasi-page";
+const pageTitle = "Registrasi";
+---
+
+<AuthLayout pageTitle={pageTitle}>
+  <RegistrasiPage client:load />
+</AuthLayout>

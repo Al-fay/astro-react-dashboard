@@ -1,0 +1,15 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { ModeToggle } from "@/components/ModeToggle";
+const { pageTitle } = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="fixed top-4 right-4 z-50">
+    <ModeToggle client:load />
+  </div>
+
+  <div class="flex min-h-screen items-center justify-center">
+    <slot />
+  </div>
+</BaseLayout>

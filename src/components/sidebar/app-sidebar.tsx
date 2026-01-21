@@ -4,10 +4,13 @@ import { NavMain } from "./nav-main";
 import { UserNav } from "./user-nav";
 import { ModeToggle } from "../ModeToggle";
 
-export function AppSidebar() {
+type AppSidebarProps = {
+  currentPath: string;
+};
+
+const AppSidebar: React.FC<AppSidebarProps> = ({ currentPath }) => {
   return (
     <aside className="flex h-screen w-72 flex-col border-r bg-background">
-      {/* Header */}
       <div className="flex justify-between gap-3 px-4 py-4">
         <div className="flex flex-col leading-tight">
           <span className="font-semibold">Acme Inc</span>
@@ -18,15 +21,13 @@ export function AppSidebar() {
 
       <Separator />
 
-      {/* Content */}
       <ScrollArea className="flex-1 px-2">
-        <NavMain />
+        <NavMain currentPath={currentPath} />
       </ScrollArea>
 
       <Separator />
 
-      {/* Footer / User */}
       <UserNav />
     </aside>
   );
-}
+};
